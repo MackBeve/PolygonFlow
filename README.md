@@ -16,3 +16,5 @@ Instructions:
 5. Pick which flow you want to model
 6. An animation of the polygon flowing will appear and continue until the window is closed
 7. A plot of the isopermetric ratio of the polygon over time will appear
+
+Thanks to Prof. Paul T. Allen for advising this research project and Elijah Barnes for discovering some of the geometric flows.
