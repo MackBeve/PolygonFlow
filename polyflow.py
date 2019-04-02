@@ -6,9 +6,9 @@ import matplotlib.pyplot as plt
 import pickle
 
 polygon = None
-savedpolys = pickle.load(open('savedpolys.txt', 'rb'))
-oldpolys = pickle.load(open('oldpolys.txt', 'rb'))
-polytype = raw_input('(r)andom, (s)aved, (p)revious, or (n)ew polygon?\n')
+#savedpolys = pickle.load(open('savedpolys.txt', 'rb'))
+#oldpolys = pickle.load(open('oldpolys.txt', 'rb'))
+polytype = raw_input('(r)andom, or (n)ew polygon?\n')
 if polytype == 'r':
 	num = int(raw_input('How many vertices?\n'))
 	polygon = flow.rand_poly(num)
@@ -20,22 +20,22 @@ elif polytype == 'p':
 elif polytype == 'n':
 	num = int(raw_input('How many vertices?\n'))
 	polygon = flow.prompt(num)
-elif polytype == 's':
-	name = raw_input('Please enter the name of the polygon\n')
-	for i in range(0, len(savedpolys[0])):
-		if savedpolys[0][i] == name:
-			polygon = savedpolys[1][i]
-			flow.set_poly(polygon)	
-			break
-	if polygon == None:
-		print('Polygon not found\n')
+# elif polytype == 's':
+# 	name = raw_input('Please enter the name of the polygon\n')
+# 	for i in range(0, len(savedpolys[0])):
+# 		if savedpolys[0][i] == name:
+# 			polygon = savedpolys[1][i]
+# 			flow.set_poly(polygon)
+# 			break
+# 	if polygon == None:
+# 		print('Polygon not found\n')
 
-if polygon != None:
-	oldpolys.insert(0,polygon)
-	if len(oldpolys) > 10:
-		del oldpolys[10]
+#if polygon != None:
+# oldpolys.insert(0,polygon)
+# if len(oldpolys) > 10:
+# 	del oldpolys[10]
 
-pickle.dump(oldpolys, open('oldpolys.txt', 'wb'))
+#pickle.dump(oldpolys, open('oldpolys.txt', 'wb'))
 temp = polygon.copy()
 
 flowtype = raw_input('(c)urvature, (t)angential, chow-(g)lickenstein, (r)enormalized chow-glickenstein, r(s)cg, or (m)odified curvature flow\n')
