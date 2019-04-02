@@ -1,4 +1,5 @@
 Polygon Flow
+
 J. Mack Beveridge
 
 This is a small python program I made for a math research project in Summer 2016.  It models a few different geometric polygoon flows that we were studying.
